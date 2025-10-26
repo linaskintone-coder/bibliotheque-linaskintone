@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque LinaSkintone - Science validée pour peaux noires</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #5C3A1E 0%, #3d2614 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #FFB627, #FF8C42);
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #FF8C42, #FFB627);
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .logo {
+            font-size: 3em;
+            font-weight: bold;
+            color: #FF8C42;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            color: #FFB627;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .description {
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #f5f5f5;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Email Form Section */
+        .email-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 182, 39, 0.3);
+        }
+
+        .email-section h2 {
+            color: #FF8C42;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .email-section p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            color: #f5f5f5;
+        }
+
+        .email-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #FFB627;
+            border-radius: 8px;
+            font-size: 1em;
+            background: rgba(255, 255, 255, 0.95);
+            color: #5C3A1E;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #FF8C42;
+            box-shadow: 0 0 15px rgba(255, 140, 66, 0.3);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #FF8C42, #FFB627);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 140, 66, 0.4);
+        }
+
+        /* Guides Grid */
+        .guides-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #FF8C42;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .guide-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guide-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #FF8C42, #FFB627);
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            border-color: #FFB627;
+            box-shadow: 0 15px 35px rgba(255, 140, 66, 0.3);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .guide-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .guide-title {
+            font-size: 1.5em;
+            color: #FFB627;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .guide-description {
+            color: #f5f5f5;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .guide-status {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .status-available {
+            background: rgba(76, 175, 80, 0.3);
+            color: #4CAF50;
+            border: 1px solid #4CAF50;
+        }
+
+        .status-coming {
+            background: rgba(255, 182, 39, 0.3);
+            color: #FFB627;
+            border: 1px solid #FFB627;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #f5f5f5;
+            margin-top: 60px;
+            border-top: 2px solid rgba(255, 182, 39, 0.3);
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin: 0 15px;
+            color: #FFB627;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #FF8C42;
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .email-section {
+                padding: 30px 20px;
+            }
+
+            .guides-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="logo">Lina Skintone</h1>
+            <p class="tagline">Science validée pour peaux noires</p>
+            <p class="description">
+                Bienvenue dans ta bibliothèque de guides scientifiques sur les actifs skincare. 
+                Chaque guide est basé sur des recherches validées et adapté spécifiquement aux besoins des peaux noires et mates.
+            </p>
+        </header>
+
+        <!-- Email Capture Section -->
+        <section class="email-section">
+            <h2>🎁 Accède à TOUS les Guides Gratuitement</h2>
+            <p>Inscris-toi maintenant et reçois immédiatement accès à l'ensemble de ma bibliothèque de guides scientifiques + les nouveaux guides dès leur sortie !</p>
+            
+            <!-- REMPLACE CE FORMULAIRE PAR TON FORMULAIRE CONVERTKIT -->
+            <form class="email-form" action="#" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="Ton prénom" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder="Ton adresse email" name="email" required>
+                </div>
+                <button type="submit" class="submit-btn">Je veux mes guides gratuits !</button>
+            </form>
+            <p style="margin-top: 20px; font-size: 0.9em; color: #FFB627;">
+                ✨ Accès immédiat • 100% gratuit • Aucun spam
+            </p>
+        </section>
+
+        <!-- Guides Section -->
+        <section class="guides-section">
+            <h2 class="section-title">📚 Ma Bibliothèque</h2>
+            
+            <div class="guides-grid">
+                <!-- Guide 1 - Acide Glycolique -->
+                <div class="guide-card">
+                    <div class="guide-icon">🧪</div>
+                    <h3 class="guide-title">Guide Acide Glycolique</h3>
+                    <p class="guide-description">
+                        Découvre les protocoles sécurisés d'utilisation de l'acide glycolique pour peaux noires. 
+                        Concentrations, fréquences, associations et analyse des meilleurs produits.
+                    </p>
+                    <span class="guide-status status-available">✓ Disponible</span>
+                </div>
+
+                <!-- Guide 2 - Rétinol -->
+                <div class="guide-card">
+                    <div class="guide-icon">💊</div>
+                    <h3 class="guide-title">Guide Rétinol</h3>
+                    <p class="guide-description">
+                        Maîtrise le rétinol sans risque d'hyperpigmentation. Protocoles de début, gestion de la sensibilité et choix des formules adaptées.
+                    </p>
+                    <span class="guide-status status-coming">Bientôt disponible</span>
+                </div>
+
+                <!-- Guide 3 - Acide Hyaluronique -->
+                <div class="guide-card">
+                    <div class="guide-icon">💧</div>
+                    <h3 class="guide-title">Guide Acide Hyaluronique</h3>
+                    <p class="guide-description">
+                        Hydratation optimale pour peaux noires : types de molécules, poids moléculaires, layering et associations gagnantes.
+                    </p>
+                    <span class="guide-status status-coming">Bientôt disponible</span>
+                </div>
+
+                <!-- Guide 4 - Vitamine C -->
+                <div class="guide-card">
+                    <div class="guide-icon">🍊</div>
+                    <h3 class="guide-title">Guide Vitamine C</h3>
+                    <p class="guide-description">
+                        Anti-oxydant puissant et éclaircissant : formes stables, pH optimal, conservation et protocoles anti-taches.
+                    </p>
+                    <span class="guide-status status-coming">Bientôt disponible</span>
+                </div>
+
+                <!-- Guide 5 - Niacinamide -->
+                <div class="guide-card">
+                    <div class="guide-icon">✨</div>
+                    <h3 class="guide-title">Guide Niacinamide</h3>
+                    <p class="guide-description">
+                        L'actif polyvalent par excellence : régulation du sébum, réduction des pores, effet éclaircissant et anti-inflammatoire.
+                    </p>
+                    <span class="guide-status status-coming">Bientôt disponible</span>
+                </div>
+
+                <!-- Guide 6 - AHA/BHA -->
+                <div class="guide-card">
+                    <div class="guide-icon">🔬</div>
+                    <h3 class="guide-title">Guide AHA/BHA</h3>
+                    <p class="guide-description">
+                        Exfoliation chimique maîtrisée : différences entre AHA et BHA, protocoles sécurisés et gestion du renouvellement cellulaire.
+                    </p>
+                    <span class="guide-status status-coming">Bientôt disponible</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p><strong>Bibliothèque LinaSkintone</strong></p>
+            <p>Science validée pour peaux noires</p>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@LinaSkintone" target="_blank" class="social-link">📺 YouTube</a>
+                <a href="https://www.tiktok.com/@linaskintone" target="_blank" class="social-link">🎵 TikTok</a>
+                <a href="https://www.instagram.com/linaskintone" target="_blank" class="social-link">📸 Instagram</a>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.9em; opacity: 0.8;">
+                © 2025 LinaSkintone - Tous droits réservés
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
